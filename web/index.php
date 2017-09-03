@@ -150,40 +150,50 @@ foreach ($client->parseEvents() as $event) {
                                 ),
                             );
                         array_push($result, $candidate);
+
+                         $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => $item['gsx$title']['$t']
+                                )
+                            )
+                        ));
                     }
                 }
             }
 
             switch ($message['type']) {
                 case 'text':
-                    if(!empty($result)){
-                        $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => $message['text'].'讓我想想喔…',
-                                ),
-                                array(
-                                    'type' => 'template',
-                                    'altText' => '為您推薦下列美食：',
-                                    'template' => array(
-                                        'type' => 'carousel',
-                                        'columns' => $result,
-                                    ),
-                                ),
-                                array(
-                                    'type' => 'text',
-                                    'text' => '這些都超好吃，真心不騙！',
-                                ),
-                                array(
-                                    'type' => 'sticker',
-                                    'packageId' => '1',
-                                    'stickerId' => '2',
-                                ),
-                            ),
-                        ));
-                    }else{
+                    // if(!empty($result)){
+                    //     $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => $message['text'].'讓我想想喔…',
+                    //             ),
+                    //             array(
+                    //                 'type' => 'template',
+                    //                 'altText' => '為您推薦下列美食：',
+                    //                 'template' => array(
+                    //                     'type' => 'carousel',
+                    //                     'columns' => $result,
+                    //                 ),
+                    //             ),
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '這些都超好吃，真心不騙！',
+                    //             ),
+                    //             array(
+                    //                 'type' => 'sticker',
+                    //                 'packageId' => '1',
+                    //                 'stickerId' => '2',
+                    //             ),
+                    //         ),
+                    //     ));
+                    // }else{
                          $m_message = $message['text'];
                         if($m_message!="" && preg_match('/\肉肉/i',$m_message))
                         {
@@ -246,7 +256,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                             ));
                         }
-                    }
+                   // }
                     break;
                 default:
                     error_log("Unsupporeted message type: " . $message['type']);
