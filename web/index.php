@@ -30,7 +30,6 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-
                 	$m_message = $message['text'];
                 	if($m_message!="" && $m_message.indexOf('肉肉') != -1)
                 	{
@@ -45,7 +44,24 @@ foreach ($client->parseEvents() as $event) {
                         )
                     	));
                 	}
-                    break;
+
+                	if($m_message!="" && $m_message=='肉肉')
+                	{
+                		$client->replyMessage(array(
+                        'replyToken' => $event['replyToken'],
+                        'messages' => array(
+                            array(
+                                'type' => 'text',
+                                'text' => '我是好吃的肉肉！'
+                                 //'text' => $m_message
+                            )
+                        )
+                    	));
+                	}
+
+
+
+                break;
                 
             }
             break;
