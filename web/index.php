@@ -31,14 +31,16 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
-                	if($m_message!="")
+                	if($m_message!="" && $m_message=='雲手')
                 	{
+
+
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => '雲手好帥！'
+                                'text' => '雲手是我的！'
                                  //'text' => $m_message
                             )
                         )
