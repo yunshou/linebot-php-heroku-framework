@@ -50,17 +50,17 @@ foreach ($client->parseEvents() as $event) {
                             ),
                         );
                     array_push($result, $candidate);
-                     $isKeyWord = '1';
-                    }else{
-                      $isKeyWord = '0';
+                    //  $isKeyWord = '1';
+                    // }else{
+                    //   $isKeyWord = '0';
 
-                    }
+                    // }
                 }
             }
 
             switch ($message['type']) {
                 case 'text':
-                    if($isKeyWord == '1'){
+                    //if($isKeyWord == '1'){
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -87,74 +87,70 @@ foreach ($client->parseEvents() as $event) {
                                 ),
                             ),
                         ));
-                    }else{
-                        $m_message = $message['text'];
-                        if($m_message!="" && preg_match('/\肉肉/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '我是好吃的肉肉！'
-                                    //'text' => $m_message
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\雲手/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '我的雲手好帥歐！'
-                                    //'text' => $m_message
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\阿軒/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '阿軒！要一起玩肉肉嗎？((害羞))'
-                                    //'text' => $m_message
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\幹/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '不要罵髒話啦～人家會害怕！！'
-                                    
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\已讀不回/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(            
-                                    'type'=> 'image',
-                                    'originalContentUrl' => 'https://i.imgur.com/xjTET8v.jpg',
-                                    'previewImageUrl'=> 'https://i.imgur.com/xjTET8v.jpg'                                       
-                                )
-                            )
-                            ));
-                        }
-                    }
+                    // }else{
+                    //     $m_message = $message['text'];
+                    //     if($m_message!="" && preg_match('/\肉肉/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '我是好吃的肉肉！'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\雲手/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '我的雲手好帥歐！'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\阿軒/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '阿軒！要一起吃肉肉嗎？((害羞))'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\幹/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '不要罵髒話啦～'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\已讀不回/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(            
+                    //                 'type'=> 'image',
+                    //                 'originalContentUrl' => 'https://i.imgur.com/xjTET8v.jpg',
+                    //                 'previewImageUrl'=> 'https://i.imgur.com/xjTET8v.jpg'                                       
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    // }
 
                     break;
                 default:
