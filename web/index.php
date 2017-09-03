@@ -132,37 +132,37 @@ foreach ($client->parseEvents() as $event) {
             $data = json_decode($json, true);
             $result = array();
 
-            foreach ($data['feed']['entry'] as $item) {
-                $keywords = explode(',', $item['gsx$keyword']['$t']);
+            // foreach ($data['feed']['entry'] as $item) {
+            //     $keywords = explode(',', $item['gsx$keyword']['$t']);
 
-                foreach ($keywords as $keyword) {
-                    if (mb_strpos($message['text'], $keyword) !== false) {
-                        $candidate = array(
-                            'thumbnailImageUrl' => $item['gsx$photourl']['$t'],
-                            'title' => $item['gsx$title']['$t'],
-                            'text' => $item['gsx$title']['$t'],
-                            'actions' => array(
-                                array(
-                                    'type' => 'uri',
-                                    'label' => '查看詳情',
-                                    'uri' => $item['gsx$url']['$t'],
-                                    ),
-                                ),
-                            );
-                        array_push($result, $candidate);
+            //     foreach ($keywords as $keyword) {
+            //         if (mb_strpos($message['text'], $keyword) !== false) {
+            //             $candidate = array(
+            //                 'thumbnailImageUrl' => $item['gsx$photourl']['$t'],
+            //                 'title' => $item['gsx$title']['$t'],
+            //                 'text' => $item['gsx$title']['$t'],
+            //                 'actions' => array(
+            //                     array(
+            //                         'type' => 'uri',
+            //                         'label' => '查看詳情',
+            //                         'uri' => $item['gsx$url']['$t'],
+            //                         ),
+            //                     ),
+            //                 );
+            //             array_push($result, $candidate);
 
-                         $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => $item['gsx$title']['$t']
-                                )
-                            )
-                        ));
-                    }
-                }
-            }
+            //              $client->replyMessage(array(
+            //                 'replyToken' => $event['replyToken'],
+            //                 'messages' => array(
+            //                     array(
+            //                         'type' => 'text',
+            //                         'text' => $item['gsx$title']['$t']
+            //                     )
+            //                 )
+            //             ));
+            //         }
+            //     }
+            // }
 
             switch ($message['type']) {
                 case 'text':
