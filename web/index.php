@@ -55,7 +55,7 @@ foreach ($client->parseEvents() as $event) {
 
             switch ($message['type']) {
                 case 'text':
-                    if(!empty($result)){
+                    // if(!empty($result)){
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -82,70 +82,70 @@ foreach ($client->parseEvents() as $event) {
                                 ),
                             ),
                         ));
-                    }else{
-                         $m_message = $message['text'];
-                        if($m_message!="" && preg_match('/\肉肉/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '我是好吃的肉肉！'
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\雲手/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '我的雲手好帥歐！'
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\阿軒/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '阿軒！要一起吃肉肉嗎？((害羞))'
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\幹/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => '不要罵髒話啦～'
-                                )
-                            )
-                            ));
-                        }
-                        if($m_message!="" && preg_match('/\已讀不回/i',$m_message))
-                        {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(            
-                                    'type'=> 'image',
-                                    'originalContentUrl' => 'https://i.imgur.com/xjTET8v.jpg',
-                                    'previewImageUrl'=> 'https://i.imgur.com/xjTET8v.jpg'                                       
-                                )
-                            )
-                            ));
-                        }
-                    }
+                    // }else{
+                    //      $m_message = $message['text'];
+                    //     if($m_message!="" && preg_match('/\肉肉/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '我是好吃的肉肉！'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\雲手/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '我的雲手好帥歐！'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\阿軒/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '阿軒！要一起吃肉肉嗎？((害羞))'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\幹/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(
+                    //                 'type' => 'text',
+                    //                 'text' => '不要罵髒話啦～'
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    //     if($m_message!="" && preg_match('/\已讀不回/i',$m_message))
+                    //     {
+                    //         $client->replyMessage(array(
+                    //         'replyToken' => $event['replyToken'],
+                    //         'messages' => array(
+                    //             array(            
+                    //                 'type'=> 'image',
+                    //                 'originalContentUrl' => 'https://i.imgur.com/xjTET8v.jpg',
+                    //                 'previewImageUrl'=> 'https://i.imgur.com/xjTET8v.jpg'                                       
+                    //             )
+                    //         )
+                    //         ));
+                    //     }
+                    // }
                     break;
                 default:
                     error_log("Unsupporeted message type: " . $message['type']);
