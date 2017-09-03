@@ -31,19 +31,19 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
-                	if($m_message!="" && $m_message.indexOf('肉肉') != -1)
-                	{
-                		$client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' => '我是雲手的肉肉！'
-                                 //'text' => $m_message
-                            )
-                        )
-                    	));
-                	}
+                	// if($m_message!="" && $m_message.indexOf('肉肉') != -1)
+                	// {
+                	// 	$client->replyMessage(array(
+                    //     'replyToken' => $event['replyToken'],
+                    //     'messages' => array(
+                    //         array(
+                    //             'type' => 'text',
+                    //             'text' => '我是雲手的肉肉！'
+                    //              //'text' => $m_message
+                    //         )
+                    //     )
+                    // 	));
+                	// }
 
                 	if($m_message!="" && $m_message=='肉肉')
                 	{
