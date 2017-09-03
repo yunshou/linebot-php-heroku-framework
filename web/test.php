@@ -6,7 +6,7 @@
             $data = json_decode($json, true);
             $result = array();
            
-            $message['text'] = '彰化';
+            $message['text'] = '彰';
            
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
