@@ -1,9 +1,4 @@
 <?php
-
-
-
-<?php
-
 /**
  * Copyright 2016 LINE Corporation
  *
@@ -128,9 +123,9 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
 
-            $json = file_get_contents('https://spreadsheets.google.com/feeds/list/1tQCaj3LUVwH0tBuPrfBY2dOJuF-qzpYEdOqGdNvJRLc/od6/public/values?alt=json');
-            $data = json_decode($json, true);
-            $result = array();
+            // $json = file_get_contents('https://spreadsheets.google.com/feeds/list/1tQCaj3LUVwH0tBuPrfBY2dOJuF-qzpYEdOqGdNvJRLc/od6/public/values?alt=json');
+            // $data = json_decode($json, true);
+            // $result = array();
 
             // foreach ($data['feed']['entry'] as $item) {
             //     $keywords = explode(',', $item['gsx$keyword']['$t']);
