@@ -54,7 +54,7 @@ foreach ($client->parseEvents() as $event) {
 
             switch ($message['type']) {
                 case 'text':
-                    if($result){
+                    if($result!==''){
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
