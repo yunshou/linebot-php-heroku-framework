@@ -30,17 +30,16 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+
                 	$m_message = $message['text'];
-                	if($m_message!="" && $m_message=='雲手')
+                	if($m_message!="" && $m_message.indexOf('肉肉') != -1)
                 	{
-
-
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => '雲手是我的！'
+                                'text' => '我是雲手的肉肉！'
                                  //'text' => $m_message
                             )
                         )
