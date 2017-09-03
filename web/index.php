@@ -28,7 +28,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
 
             //https://docs.google.com/spreadsheets/d/e/2PACX-1vQo09zfHQAye7n2vW--8EpR5DxmuCawBiCuDM9p7PzhOvuKQtiAeafNQLBX64A5s4PFEvikZpKdSz3a/pubhtml
-            $json = file_get_contents('https://spreadsheets.google.com/feeds/list/2PACX-1vQo09zfHQAye7n2vW--8EpR5DxmuCawBiCuDM9p7PzhOvuKQtiAeafNQLBX64A5s4PFEvikZpKdSz3a/od6/public/values?alt=json');
+            $json = file_get_contents('https://spreadsheets.google.com/feeds/list/1P74T0LWVjk5DmChSfvFUmYBB31o0pGNbqZsBADK_1kY/od6/public/values?alt=json');
             $data = json_decode($json, true);
             $result = array();
             $isKeyWord ='0';
