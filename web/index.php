@@ -45,7 +45,7 @@ foreach ($client->parseEvents() as $event) {
                     // 	));
                 	// }
 
-                	if($m_message!="" && preg_match('肉肉',$m_message))
+                	if($m_message!="" && preg_match('/\肉肉/i',$m_message))
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
@@ -58,7 +58,19 @@ foreach ($client->parseEvents() as $event) {
                         )
                     	));
                 	}
-
+                	if($m_message!="" && $m_message=='雲手')
+                	{
+                		$client->replyMessage(array(
+                        'replyToken' => $event['replyToken'],
+                        'messages' => array(
+                            array(
+                                'type' => 'text',
+                                'text' => '雲手好帥歐！'
+                                 //'text' => $m_message
+                            )
+                        )
+                    	));
+                	}
 
 
                 break;
